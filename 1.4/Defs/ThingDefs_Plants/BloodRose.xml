@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- <ThingDef ParentName="PlantBase">
+    <defName>Plant_BloodRose</defName>
+    <label>blood rose</label>
+    <description>This fragile mushroom was genetically engineered to produce a silk net that is both difficult to tear and soft to the touch. While the mushroom takes a very long time to grow, only exotic ultra-tech fabrics outperform its devilstrand fibers.\n\nSome say it's called devilstrand because of its red color. Others think it owes its name to the greed it inspires in people.</description>
+    <statBases>
+      <MaxHitPoints>85</MaxHitPoints>
+      <Nutrition>0.2</Nutrition>
+    </statBases>
+    <altitudeLayer>Building</altitudeLayer>
+    <graphicData>
+      <texPath>Things/Plant/BloodRose</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <selectable>true</selectable>
+    <pathCost>14</pathCost>
+    <ingestible />
+    <plant>
+      <growDays>22.5</growDays>
+      <sowWork>400</sowWork>
+      <dieIfLeafless>true</dieIfLeafless>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>ToxiStrandTextile</harvestedThingDef>
+      <harvestYield>6</harvestYield>
+      <neverBlightable>true</neverBlightable>
+      <sowTags>
+        <li>Ground</li>
+      </sowTags>
+      <sowMinSkill>12</sowMinSkill>
+      <sowResearchPrerequisites>
+        <li>Devilstrand</li>
+      </sowResearchPrerequisites>
+      <topWindExposure>0.1</topWindExposure>
+      <visualSizeRange>0.3~1.0</visualSizeRange>
+      <wildOrder>2</wildOrder>
+      <pollution>PollutedOnly</pollution>
+      <fertilityMin>0.50</fertilityMin>
+	  <blockAdjacentSow>true</blockAdjacentSow>
+    </plant>
+  </ThingDef> -->
+  
+  <ThingDef ParentName="TreeBase">
+    <defName>Plant_BloodRose</defName>
+    <label>blood rose</label>
+    <thingClass>ToxicPlants.BloodRosePlant</thingClass>
+    <description>A large, distinctive-looking tree with a unique life-cycle. Each Gauranlen tree contains a small non-conscious dryad queen. The queen births creatures called dryads which guard and tend the tree. In exchange, the tree nurtures its protectors by feeding them directly. From the outside, it appears the dryads are created by the tree directly and act as part of it.\n\nIt is possible for a person to form a connection with a Gauranlen tree and partially control the dryads it produces.\n\nSome say Gauranlen trees are the homes of nature spirits that follow humanity across worlds.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Plant/BloodRose</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+	  <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <tickerType>Normal</tickerType>
+    <canScatterOver>false</canScatterOver>
+    <minifiedDef IsNull="True" />
+    <statBases>
+      <Beauty>6</Beauty>
+      <BeautyOutdoors>6</BeautyOutdoors>
+      <Flammability>1</Flammability>
+      <MaxHitPoints>300</MaxHitPoints>
+    </statBases>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+    <plant>
+      <growDays>10</growDays>
+      <visualSizeRange>1.5~2.1</visualSizeRange>
+      <sowMinSkill>0</sowMinSkill>
+      <sowTags Inherit="False"/>
+      <lifespanDaysPerGrowDays>0</lifespanDaysPerGrowDays>
+      <fertilityMin>0.05</fertilityMin>
+      <fertilitySensitivity>0</fertilitySensitivity>
+      <wildClusterWeight>0</wildClusterWeight>
+      <sowWork>400</sowWork>
+      <harvestYield>35</harvestYield>
+      <treeCategory>Super</treeCategory>
+      <dieIfNoSunlight>false</dieIfNoSunlight>
+      <growMinGlow>0</growMinGlow>
+      <sowResearchPrerequisites Inherit="False" />
+      <dieFromToxicFallout>False</dieFromToxicFallout>
+      <showGrowthInInspectPane>false</showGrowthInInspectPane>
+      <minSpacingBetweenSamePlant>4.9</minSpacingBetweenSamePlant>
+      <warnIfMarkedForCut>true</warnIfMarkedForCut>
+      <choppedThingDef>ChoppedStump_Gauranlen</choppedThingDef>
+      <smashedThingDef>SmashedStump_Gauranlen</smashedThingDef>
+      <pollution>PollutedOnly</pollution>
+	  <blockAdjacentSow>true</blockAdjacentSow>
+    </plant>
+    <designationHotKey>Misc3</designationHotKey>
+    <comps>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>2000</ticksPerHeal> 
+      </li>
+	  <li Class="CompProperties_Refuelable">
+        <fuelConsumptionRate>22.0</fuelConsumptionRate>
+        <fuelCapacity>75.0</fuelCapacity>
+        <fuelFilter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </fuelFilter>
+        <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!--<ThingDef ParentName="StumpChoppedBase">
+    <defName>ChoppedStump_Gauranlen</defName>
+    <label>chopped gauranlen stump</label>
+    <description>A stump left behind after a garuanlen tree has been felled. The stump can be extracted but yields very little usable wood. Left outdoors, the stump will deteriorate in time.</description>
+    <graphicData>
+      <texPath>Things/Plant/Stumps/StumpChoppedGauranlen</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="StumpSmashedBase">
+    <defName>SmashedStump_Gauranlen</defName>
+    <label>smashed gauranlen stump</label>
+    <description>The remnants of a gauranlen tree destroyed by damage. It's ugly. The stump can be extracted but yields very little usable wood. Left outdoors, the stump will deteriorate in time.</description>
+    <graphicData>
+      <texPath>Things/Plant/Stumps/StumpSmashedGauranlen</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>-->
+  <!-- <ThingDef ParentName="PlantBaseNonEdible">
+    <defName>Plant_PodBloodRose</defName>
+    <label>Blood Rose Pod</label>
+    <description>A small pod that protects a single man seed. This seed can be harvested and used to plant a Gauranlen tree.</description>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/GauranlenPod</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <descriptionHyperlinks>
+      <ThingDef>Plant_TreeGauranlen</ThingDef>
+      <ThingDef>GauranlenSeed</ThingDef>
+    </descriptionHyperlinks>
+    <selectable>true</selectable>
+    <neverMultiSelect>false</neverMultiSelect>
+    <pathCost>14</pathCost>
+    <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+    <plant>
+      <fertilitySensitivity>0.15</fertilitySensitivity>
+      <growDays>6</growDays>
+      <harvestYield>1</harvestYield>
+      <harvestTag>Standard</harvestTag>
+      <harvestAfterGrowth>0</harvestAfterGrowth>
+      <harvestedThingDef>GauranlenSeed</harvestedThingDef>
+      <harvestFailable>false</harvestFailable>
+      <harvestYieldAffectedByDifficulty>false</harvestYieldAffectedByDifficulty>
+      <visualSizeRange>0.6~1.1</visualSizeRange>
+      <topWindExposure>0.1</topWindExposure>
+      <wildClusterWeight>0</wildClusterWeight>
+      <purpose>Misc</purpose>
+      <allowAutoCut>false</allowAutoCut>
+      <dieFromToxicFallout>False</dieFromToxicFallout>
+      <warnIfMarkedForCut>true</warnIfMarkedForCut>
+    </plant>
+  </ThingDef> -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>BloodRoseSeed</defName>
+    <label>Blood Rose seed</label>
+    <description>The seed of a Gauranlan tree. It can be planted to create a new Gauranlen tree.</description>
+    <descriptionHyperlinks>
+      <ThingDef>Plant_TreeGauranlen</ThingDef>
+      <ThingDef>Plant_PodGauranlen</ThingDef>
+    </descriptionHyperlinks>
+    <stackLimit>5</stackLimit>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Mass>0.3</Mass>
+      <Beauty>0</Beauty>
+      <MarketValue>70</MarketValue>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/GauranlenSeed</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>(0.6, 0.6)</drawSize>
+    </graphicData>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Plantable">
+        <plantDefToSpawn>Plant_BloodRose</plantDefToSpawn>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

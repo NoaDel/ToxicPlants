@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<ThingDef ParentName="MedicineBase">
+    <defName>TestMedicineIndustrial</defName>
+    <label>testmedicine</label>
+    <description>A kit of industrial-era medical equipment. It contains basic drugs, tools for suturing and bone setting, diagnostic devices, and various pads and fluids.</description>
+    <possessionCount>3</possessionCount>
+    <graphicData>
+      <texPath>Things/Item/Resource/Medicine/MedicineIndustrial</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <MarketValue>18</MarketValue>
+      <Mass>0.50</Mass>
+      <Flammability>0.7</Flammability>
+      <MedicalPotency>1.00</MedicalPotency>
+      <MedicalQualityMax>1.00</MedicalQualityMax>
+      <DeteriorationRate>2</DeteriorationRate>
+      <WorkToMake>700</WorkToMake>
+    </statBases>
+    <modExtensions>
+	<li Class="ToxicPlants.ToxicPlantModExtension">
+		<ToxicAmount>0.2</ToxicAmount>
+	</li>
+    </modExtensions>
+    <costList>
+      <MedicineHerbal>1</MedicineHerbal>
+      <Neutroamine>1</Neutroamine>
+      <Cloth>3</Cloth>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <recipeUsers>
+        <li>DrugLab</li>
+      </recipeUsers>
+      <researchPrerequisite>MedicineProduction</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>4</Crafting>
+        <Intellectual>4</Intellectual>
+      </skillRequirements>
+      <bulkRecipeCount>4</bulkRecipeCount>
+    </recipeMaker>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+  </ThingDef>
+</Defs>
